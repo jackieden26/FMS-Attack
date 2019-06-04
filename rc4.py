@@ -9,11 +9,18 @@ def initSBox(box):
     for i in range(256):
         box.append(i)
 
-# Key schedule Algorithm (KSA).
+# Key schedule Algorithm (KSA) for key whose value is in unicode.
 def ksa(key, box):
     j = 0
     for i in range(256):
         j = (j + box[i] + ord(key[i % len(key)])) % 256
+        swapValueByIndex(box, i, j)
+
+# KSA for key whose value is int
+def ksaInt(key, box):
+    j = 0
+    for i in range(256):
+        j = (j + box[i] + key[i % len(key)]) % 256
         swapValueByIndex(box, i, j)
 
 # Pseudo-random generation algorithm (PRGA).
