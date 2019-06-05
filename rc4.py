@@ -6,8 +6,12 @@ def swapValueByIndex(box, i, j):
 
 # Initialize S-box.
 def initSBox(box):
-    for i in range(256):
-        box.append(i)
+    if len(box) == 0:
+        for i in range(256):
+            box.append(i)
+    else:
+        for i in range(256):
+            box[i] = i
 
 # Key schedule Algorithm (KSA) for key whose value is in unicode.
 def ksa(key, box):
