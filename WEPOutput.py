@@ -24,11 +24,8 @@ for i in rawkey:
 key = []
 i = 0
 while i < len(rawkey):
-    print(rawkey[i] + rawkey[i+1])
     key.append(int(rawkey[i] + rawkey[i+1], 16))
     i += 2
-
-print(key)
 
 # Initial IV form.
 iv = [3, 255, 0]
@@ -59,3 +56,4 @@ for A in range(len(key)):
         keyStreamByte = box[(box[i] + box[j]) % 256]
         cipherByte = (int(plainSNAP, 16)) ^ keyStreamByte
         WEPOutputSim.write(str(iv[0]) + "," + str(iv[1]) + "," + str(iv[2]) + "," + str(cipherByte) + "\n")
+print("WEPOutputSim.csv is generated sucessfully.")
