@@ -1,7 +1,8 @@
 import sys
 from rc4 import *
 
-possibleByte = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F']
+possibleByte = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F' \
+                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 if len(sys.argv) != 2:
     print("user input key (in hex) should be second argument")
@@ -14,12 +15,16 @@ if len(rawkey) % 2 != 0:
 
 for i in rawkey:
     if i not in possibleByte:
+        print(rawkey)
+        print(i)
+        print(type(i))
         print("key should only contains 0-9 and A-F.")
         sys.exit()
 
 key = []
 i = 0
 while i < len(rawkey):
+    print(rawkey[i] + rawkey[i+1])
     key.append(int(rawkey[i] + rawkey[i+1], 16))
     i += 2
 
