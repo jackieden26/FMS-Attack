@@ -20,6 +20,27 @@ with the first encrypted cipher to recover the first byte of key stream.
 This file reads in `WEPOutputSim.csv` and recover the original entered key. It
 could be wrong but in most situation the result is always correct.
 
+## Usage
+First, use `WEPOutput.py` to generate simulated WEP packets. For example,
+in terminal we put:
+```
+$ python WEPOutput.py AF1423
+```
+It will output in terminal:
+```
+WEPOutputSim.csv is generated sucessfully.
+```
+and also create a file name `WEPOutputSim.csv` to store the packets.
+Then, use `keyRecover.py` to analyze this packet files by:
+```
+$ python keyRecover.py
+```
+It will output in terminal:
+```
+keyLength is: 3
+AF1423
+```
+
 ## Reference
 https://link.springer.com/content/pdf/10.1007%2F3-540-45537-X_1.pdf
 
