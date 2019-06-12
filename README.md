@@ -22,7 +22,7 @@ could be wrong but in most situation the result is always correct.
 
 ## Usage
 First, use `WEPOutput.py` to generate simulated WEP packets. For example,
-in terminal we put:
+in terminal we use AF1423 as the user input key for WEP:
 ```
 $ python WEPOutput.py AF1423
 ```
@@ -35,7 +35,7 @@ Then, use `keyRecover.py` to analyze this packet files by:
 ```
 $ python keyRecover.py
 ```
-It will output in terminal:
+It will recover the key and output in terminal:
 ```
 keyLength is: 3
 AF1423
