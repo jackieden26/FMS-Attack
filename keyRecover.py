@@ -51,6 +51,6 @@ for A in range(keyLength):
 
 # Get rid of first 24-bit initialization vector.
 userInput = key[3:]
-result = [format(key, 'x') for key in userInput]
+result = ["{:02x}".format(key) for key in userInput]
 rawkey = ''.join(result).upper()
 print(rawkey)
